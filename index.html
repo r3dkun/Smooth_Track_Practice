@@ -4,79 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planilha de Benchmark Kovaaks</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .tabs {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        .tab-button {
-            padding: 10px 20px;
-            background-color: #f1f1f1;
-            border: 1px solid #ccc;
-            cursor: pointer;
-            margin-right: 5px;
-        }
-        .tab-button.active {
-            background-color: #28a745;
-            color: white;
-        }
-        .tab-content {
-            display: none;
-            border: 1px solid #ccc;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .grid-item {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            background-color: #fff;
-        }
-        .grid-item input {
-            width: 90%;
-            padding: 5px;
-            margin-top: 5px;
-        }
-        .grid-item p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #555;
-        }
-        .grid-item strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Planilha de Benchmark Kovaaks</h1>
 
-    <!-- Tabs -->
     <div class="tabs">
         <button class="tab-button active" onclick="openTab(event, 'iniciante')">Tracking Smooth Iniciante</button>
         <button class="tab-button" onclick="openTab(event, 'amador')">Tracking Smooth Amador</button>
         <button class="tab-button" onclick="openTab(event, 'intermediario')">Tracking Smooth Intermediário</button>
     </div>
 
-    <!-- Conteúdo das Tabs -->
     <div id="iniciante" class="tab-content active">
         <h2>Tracking Smooth Iniciante</h2>
-        <!-- Grids estáticos -->
         <div class="grid-container">
-            <!-- Mapa 1 -->
             <div class="grid-item">
                 <strong>Nome do Mapa</strong>
                 <input type="text" value="Tile Frenzy" readonly>
@@ -98,14 +39,11 @@
                 <input type="number" value="10000" readonly>
             </div>
         </div>
-        <!-- Repetir para outros mapas -->
     </div>
 
     <div id="amador" class="tab-content">
         <h2>Tracking Smooth Amador</h2>
-        <!-- Grids estáticos -->
         <div class="grid-container">
-            <!-- Mapa 1 -->
             <div class="grid-item">
                 <strong>Nome do Mapa</strong>
                 <input type="text" value="Tile Frenzy" readonly>
@@ -127,14 +65,11 @@
                 <input type="number" value="10000" readonly>
             </div>
         </div>
-        <!-- Repetir para outros mapas -->
     </div>
 
     <div id="intermediario" class="tab-content">
         <h2>Tracking Smooth Intermediário</h2>
-        <!-- Grids estáticos -->
         <div class="grid-container">
-            <!-- Mapa 1 -->
             <div class="grid-item">
                 <strong>Nome do Mapa</strong>
                 <input type="text" value="Tile Frenzy" readonly>
@@ -156,24 +91,17 @@
                 <input type="number" value="10000" readonly>
             </div>
         </div>
-        <!-- Repetir para outros mapas -->
     </div>
 
     <script>
-        // Função para alternar entre as tabs
         function openTab(event, tabName) {
-            // Esconder todos os conteúdos das tabs
             let tabContents = document.querySelectorAll(".tab-content");
             tabContents.forEach(tab => tab.classList.remove("active"));
 
-            // Remover a classe "active" de todos os botões
             let tabButtons = document.querySelectorAll(".tab-button");
             tabButtons.forEach(button => button.classList.remove("active"));
 
-            // Mostrar a tab selecionada
             document.getElementById(tabName).classList.add("active");
-
-            // Adicionar a classe "active" ao botão clicado
             event.currentTarget.classList.add("active");
         }
     </script>
