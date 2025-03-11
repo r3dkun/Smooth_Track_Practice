@@ -11,7 +11,7 @@
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr); /* 4 colunas agora */
             gap: 10px;
             margin-bottom: 20px;
         }
@@ -26,21 +26,10 @@
             padding: 5px;
             margin-top: 5px;
         }
-        .grid-item textarea {
-            width: 90%;
-            padding: 5px;
-            margin-top: 5px;
-            resize: vertical;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #218838;
+        .grid-item p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
@@ -64,12 +53,8 @@
                 <input type="number" placeholder="Digite o average score">
             </div>
             <div class="grid-item">
-                <strong>Dicas para o Usuário</strong><br>
-                <textarea placeholder="Digite dicas"></textarea>
-            </div>
-            <div class="grid-item">
-                <strong>Ações</strong><br>
-                <button onclick="saveData(0)">Salvar</button>
+                <strong>Dicas</strong><br>
+                <p>Foque em manter a precisão acima de 90% e aumente a velocidade gradualmente.</p>
             </div>
         </div>
 
@@ -88,12 +73,8 @@
                 <input type="number" placeholder="Digite o average score">
             </div>
             <div class="grid-item">
-                <strong>Dicas para o Usuário</strong><br>
-                <textarea placeholder="Digite dicas"></textarea>
-            </div>
-            <div class="grid-item">
-                <strong>Ações</strong><br>
-                <button onclick="saveData(1)">Salvar</button>
+                <strong>Dicas</strong><br>
+                <p>Mantenha os movimentos suaves e evite movimentos bruscos.</p>
             </div>
         </div>
 
@@ -112,12 +93,8 @@
                 <input type="number" placeholder="Digite o average score">
             </div>
             <div class="grid-item">
-                <strong>Dicas para o Usuário</strong><br>
-                <textarea placeholder="Digite dicas"></textarea>
-            </div>
-            <div class="grid-item">
-                <strong>Ações</strong><br>
-                <button onclick="saveData(2)">Salvar</button>
+                <strong>Dicas</strong><br>
+                <p>Pratique movimentos circulares para melhorar a precisão.</p>
             </div>
         </div>
 
@@ -136,12 +113,8 @@
                 <input type="number" placeholder="Digite o average score">
             </div>
             <div class="grid-item">
-                <strong>Dicas para o Usuário</strong><br>
-                <textarea placeholder="Digite dicas"></textarea>
-            </div>
-            <div class="grid-item">
-                <strong>Ações</strong><br>
-                <button onclick="saveData(3)">Salvar</button>
+                <strong>Dicas</strong><br>
+                <p>Antecipe os movimentos dos alvos para melhorar o tempo de reação.</p>
             </div>
         </div>
 
@@ -160,30 +133,10 @@
                 <input type="number" placeholder="Digite o average score">
             </div>
             <div class="grid-item">
-                <strong>Dicas para o Usuário</strong><br>
-                <textarea placeholder="Digite dicas"></textarea>
-            </div>
-            <div class="grid-item">
-                <strong>Ações</strong><br>
-                <button onclick="saveData(4)">Salvar</button>
+                <strong>Dicas</strong><br>
+                <p>Foque em manter a calma e não se distraia com os alvos que desaparecem.</p>
             </div>
         </div>
     </div>
-
-    <script>
-        // Função para salvar os dados (exemplo)
-        function saveData(index) {
-            let grid = document.querySelectorAll(".grid-container")[index];
-            let highscore = grid.querySelector("input[type='number']:nth-of-type(1)").value;
-            let averageScore = grid.querySelector("input[type='number']:nth-of-type(2)").value;
-            let tips = grid.querySelector("textarea").value;
-
-            // Exibir os dados salvos no console (ou enviar para um servidor)
-            console.log(`Dados salvos para o mapa ${index + 1}:`);
-            console.log(`Highscore: ${highscore}`);
-            console.log(`Average Score: ${averageScore}`);
-            console.log(`Dicas: ${tips}`);
-        }
-    </script>
 </body>
 </html>
