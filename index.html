@@ -46,10 +46,144 @@
 </head>
 <body>
     <h1>Planilha de Benchmark Kovaaks</h1>
+
+    <!-- Grids estáticos -->
     <div id="gridsContainer">
-        <!-- Grids pré-existentes serão adicionados aqui via JavaScript -->
+        <!-- Mapa 1 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong><br>
+                <input type="text" value="Tile Frenzy" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong><br>
+                <input type="number" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Average Score do Usuário</strong><br>
+                <input type="number" placeholder="Digite o average score">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas para o Usuário</strong><br>
+                <textarea placeholder="Digite dicas"></textarea>
+            </div>
+            <div class="grid-item">
+                <strong>Ações</strong><br>
+                <button onclick="saveData(0)">Salvar</button>
+            </div>
+        </div>
+
+        <!-- Mapa 2 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong><br>
+                <input type="text" value="1wall6targets TE" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong><br>
+                <input type="number" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Average Score do Usuário</strong><br>
+                <input type="number" placeholder="Digite o average score">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas para o Usuário</strong><br>
+                <textarea placeholder="Digite dicas"></textarea>
+            </div>
+            <div class="grid-item">
+                <strong>Ações</strong><br>
+                <button onclick="saveData(1)">Salvar</button>
+            </div>
+        </div>
+
+        <!-- Mapa 3 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong><br>
+                <input type="text" value="Pasu Voltaic" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong><br>
+                <input type="number" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Average Score do Usuário</strong><br>
+                <input type="number" placeholder="Digite o average score">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas para o Usuário</strong><br>
+                <textarea placeholder="Digite dicas"></textarea>
+            </div>
+            <div class="grid-item">
+                <strong>Ações</strong><br>
+                <button onclick="saveData(2)">Salvar</button>
+            </div>
+        </div>
+
+        <!-- Mapa 4 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong><br>
+                <input type="text" value="Bounce 180" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong><br>
+                <input type="number" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Average Score do Usuário</strong><br>
+                <input type="number" placeholder="Digite o average score">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas para o Usuário</strong><br>
+                <textarea placeholder="Digite dicas"></textarea>
+            </div>
+            <div class="grid-item">
+                <strong>Ações</strong><br>
+                <button onclick="saveData(3)">Salvar</button>
+            </div>
+        </div>
+
+        <!-- Mapa 5 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong><br>
+                <input type="text" value="Popcorn Sparky" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong><br>
+                <input type="number" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Average Score do Usuário</strong><br>
+                <input type="number" placeholder="Digite o average score">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas para o Usuário</strong><br>
+                <textarea placeholder="Digite dicas"></textarea>
+            </div>
+            <div class="grid-item">
+                <strong>Ações</strong><br>
+                <button onclick="saveData(4)">Salvar</button>
+            </div>
+        </div>
     </div>
 
-    <script src="benchmark.js"></script>
+    <script>
+        // Função para salvar os dados (exemplo)
+        function saveData(index) {
+            let grid = document.querySelectorAll(".grid-container")[index];
+            let highscore = grid.querySelector("input[type='number']:nth-of-type(1)").value;
+            let averageScore = grid.querySelector("input[type='number']:nth-of-type(2)").value;
+            let tips = grid.querySelector("textarea").value;
+
+            // Exibir os dados salvos no console (ou enviar para um servidor)
+            console.log(`Dados salvos para o mapa ${index + 1}:`);
+            console.log(`Highscore: ${highscore}`);
+            console.log(`Average Score: ${averageScore}`);
+            console.log(`Dicas: ${tips}`);
+        }
+    </script>
 </body>
 </html>
