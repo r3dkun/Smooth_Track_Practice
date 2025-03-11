@@ -436,6 +436,7 @@
     </div>
 
     <script>
+        // Function to open tabs
         function openTab(event, tabName) {
             let tabContents = document.querySelectorAll(".tab-content");
             tabContents.forEach(tab => tab.classList.remove("active"));
@@ -446,6 +447,44 @@
             document.getElementById(tabName).classList.add("active");
             event.currentTarget.classList.add("active");
         }
+
+        // Function to save all scores to localStorage
+        function saveAllScores() {
+            const inputs = document.querySelectorAll(".score-input");
+            const scores = {};
+
+            inputs.forEach((input, index) => {
+                scores[`input-${index}`] = input.value;
+            });
+
+            localStorage.setItem("savedScores", JSON.stringify(scores));
+        }
+
+        // Function to load all scores from localStorage
+        function loadAllScores() {
+            const savedScores = localStorage.getItem("savedScores");
+
+            if (savedScores) {
+                const scores = JSON.parse(savedScores);
+                const inputs = document.querySelectorAll(".score-input");
+
+                inputs.forEach((input, index) => {
+                    const key = `input-${index}`;
+                    if (scores[key]) {
+                        input.value = scores[key];
+                    }
+                });
+            }
+        }
+
+        // Add event listeners to all inputs to save scores on change
+        const inputs = document.querySelectorAll(".score-input");
+        inputs.forEach(input => {
+            input.addEventListener("input", saveAllScores);
+        });
+
+        // Load saved scores when the page loads
+        window.addEventListener("load", loadAllScores);
     </script>
 </body>
 </html>
