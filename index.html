@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilha de Benchmark Kovaaks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .grid-item input {
+            width: 90%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .grid-item textarea {
+            width: 90%;
+            padding: 5px;
+            margin-top: 5px;
+            resize: vertical;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Planilha de Benchmark Kovaaks</h1>
+    <div id="gridsContainer">
+        <!-- Grids serão adicionados aqui via JavaScript -->
+    </div>
+    <button onclick="addGrid()">Adicionar Grid</button>
+
+    <script src="benchmark.js"></script>
+</body>
+</html>
