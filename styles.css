@@ -1,1 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin: 20px;
+    text-align: center;
+}
 
+h1 {
+    color: #28a745;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 12px 20px;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.tab-button:hover, .tab-button.active {
+    background-color: #28a745;
+}
+
+.tab-content {
+    display: none;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #2a2a2a;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    padding: 15px;
+    text-align: center;
+    background: #333;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.grid-item p {
+    font-size: 14px;
+    color: #bbb;
+}
