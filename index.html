@@ -29,11 +29,17 @@ h1, h2 {
 h1 {
     font-size: 2.5rem;
     text-align: center;
+    background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
     font-size: 2rem;
     margin-top: 20px;
+    background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Abas */
@@ -44,26 +50,25 @@ h2 {
 }
 
 .tab-button {
-    background-color: #1f1f1f; /* Dark gray for buttons */
-    color: #e0e0e0; /* Light text */
+    background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
+    color: #121212; /* Dark text for contrast */
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     margin-right: 10px;
     border-radius: 5px;
     font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .tab-button:hover {
-    background-color: #333; /* Slightly lighter gray on hover */
     transform: translateY(-2px); /* Slight lift effect */
 }
 
 .tab-button.active {
-    background-color: #444; /* Active tab color */
+    background: linear-gradient(90deg, #ffffff, #ff0000); /* White to red gradient for active tab */
     font-weight: bold;
-    color: #ffcc00; /* Yellow for active tab text */
+    color: #121212; /* Dark text for contrast */
 }
 
 /* Conteúdo das abas */
