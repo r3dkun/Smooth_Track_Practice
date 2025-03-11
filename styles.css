@@ -87,8 +87,12 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgba(255, 117, 151, 0.2);
+    background-color: rgba(45, 21, 52, 0.3);
+    padding: 15px;
 }
 
 .warn-item {
@@ -129,6 +133,9 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
 }
 
 .grid-item {
