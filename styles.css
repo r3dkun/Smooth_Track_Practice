@@ -69,7 +69,7 @@ h2 {
 /* Grid Container Styles */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column width */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column width */
     gap: 15px;
     width: 100%; /* Ensure grid takes full width */
 }
@@ -81,7 +81,8 @@ h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
 }
 
 .grid-item strong {
@@ -93,13 +94,14 @@ h2 {
 
 .grid-item input[type="text"],
 .grid-item input[type="number"] {
-    width: 100%;
+    width: 80%; /* Reduce input width */
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #bdc3c7;
     border-radius: 4px;
     font-size: 1em;
     box-sizing: border-box; /* Ensure padding is included in width */
+    text-align: center; /* Center input text */
 }
 
 .grid-item input[readonly] {
@@ -110,6 +112,7 @@ h2 {
 .grid-item p {
     margin: 0;
     color: #7f8c8d;
+    text-align: center; /* Center paragraph text */
 }
 
 /* Responsive Design */
@@ -138,6 +141,11 @@ h2 {
     .tab-content {
         padding: 15px; /* Reduce padding for smaller screens */
     }
+
+    .grid-item input[type="text"],
+    .grid-item input[type="number"] {
+        width: 90%; /* Slightly wider inputs for mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -155,5 +163,10 @@ h2 {
 
     .grid-item {
         padding: 10px; /* Reduce padding for grid items */
+    }
+
+    .grid-item input[type="text"],
+    .grid-item input[type="number"] {
+        width: 100%; /* Full width for inputs on very small screens */
     }
 }
