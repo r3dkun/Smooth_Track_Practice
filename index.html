@@ -180,46 +180,46 @@
         }
 
 /* Congratulatory Effect */
-.congrats-effect {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    color: #fff;
-    animation: congratsAnimation 2.5s ease-in-out;
-    z-index: 1000;
-    pointer-events: none;
-    opacity: 0; /* Start with 0 opacity */
-}
+        .congrats-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            color: #fff;
+            animation: congratsAnimation 1.5s ease-in-out;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0; /* Start with 0 opacity */
+        }
 
-@keyframes congratsAnimation {
-    0% {
-        opacity: 0;
-        transform: scale(0.9); /* Start slightly smaller */
-    }
-    20% {
-        opacity: 1;
-        transform: scale(1.1); /* Slight overshoot for smoothness */
-    }
-    40% {
-        opacity: 1;
-        transform: scale(1); /* Return to normal size */
-    }
-    80% {
-        opacity: 1;
-        transform: scale(1); /* Stay visible for a bit */
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.9); /* Fade out smoothly */
-    }
-}
+        @keyframes congratsAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0.9); /* Start slightly smaller */
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1.1); /* Slight overshoot for smoothness */
+            }
+            40% {
+                opacity: 1;
+                transform: scale(1); /* Return to normal size */
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1); /* Stay visible for a bit */
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.9); /* Fade out smoothly */
+            }
+        }
     </style>
 </head>
 <body>
