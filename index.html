@@ -273,7 +273,7 @@
         <button class="tab-button" aria-label="Aba Intermediário" onclick="openTab(event, 'intermediario')">Tracking Smooth Intermediário</button>
     </div>
 
-    <div id="iniciante" class="tab-content active">
+        <div id="iniciante" class="tab-content active">
         <h2>Tracking Smooth Iniciante</h2>
         
         <!-- Warn Grid Section -->
@@ -310,11 +310,88 @@
                 <strong>Promotion Score</strong>
                 <input type="number" value="50000" readonly>
             </div>
-            <div class="progress-bar">
-                <div class="progress" id="progress-r3d-smoothness-trainer"></div>
+        </div>
+
+        <!-- Grid Container 2 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="r3d Smooth Tracking" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-smooth-tracking" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Mantenha sua precisão acima de 75% e siga o bot até o final na parede, só mude a direção da mira quando o bot virar.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="19000" readonly>
             </div>
         </div>
 
+        <!-- Grid Container 3 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="r3d Smooth Tracking HS" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-smooth-tracking-hs" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>A mesma coisa que o Smooth Tracking anterior porém mais preciso e mirando apenas na cabeça.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="17500" readonly>
+            </div>
+        </div>
+
+        <!-- Grid Container 4 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="r3d Close Smooth Strafes" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-close-smooth-strafes" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Não tente prever o movimento do BOT, siga ele até o final do strafe dele e apenas mude a direção da mira quando o bot mudar a direção do strafe.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="35000" readonly>
+            </div>
+        </div>
+
+        <!-- Grid Container 5 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="MIRA Centering 180 NS Easy" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="mira-centering-180-ns-easy" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Siga o bot usando o braço inteiro para mirar, ele só muda o strafe quando bate na parede, siga até o fim dela, preste atenção na mudança de aceleração do bot para pontuar mais.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="45000" readonly>
+            </div>
+        </div>
+    </div>
         <!-- Share Button -->
         <button onclick="shareScore('r3d-smoothness-trainer')">Compartilhar Pontuação</button>
     </div>
@@ -356,16 +433,94 @@
                 <strong>Promotion Score</strong>
                 <input type="number" value="3000" readonly>
             </div>
-            <div class="progress-bar">
-                <div class="progress" id="progress-mira-thin-gauntlet-easy"></div>
+        </div>
+
+        <!-- Grid Container 2 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="r3d Smoothsphere" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-smoothsphere" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Matenha sempre a velocidade do seu glide constante, quando o bot acelerar acelere junto com ele e quando ele diminuar leia o movimento para que não perca o alvo.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="30000" readonly>
             </div>
         </div>
+
+        <!-- Grid Container 3 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="r3d Slowed Smoothbot Easy" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-slowed-smoothbot-easy" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Matenha sempre a velocidade do seu glide constante, quando o bot acelerar acelere junto com ele e quando ele diminuar leia o movimento para que não perca o alvo.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="41500" readonly>
+            </div>
+        </div>
+
+        <!-- Grid Container 4 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="r3d Pipoca Vertical Tracking" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-pipoca-vertical-tracking" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Siga o bot até o ápice da sua altura e depois siga-o até o final da sua queda</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="25000" readonly>
+            </div>
+        </div>
+
+        <!-- Grid Container 5 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="r3d Bounce180 TI Easy" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-bounce180-ti-easy" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Aqui você vai focar em fazer o movimento do bot com o seu mouse de forma suave, sem tensão, sem desespero, o alvo é grande, apenas siga-o.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="40000" readonly>
+            </div>
+        </div>
+    </div>
 
         <!-- Share Button -->
         <button onclick="shareScore('mira-thin-gauntlet-easy')">Compartilhar Pontuação</button>
     </div>
 
-    <div id="intermediario" class="tab-content">
+     <div id="intermediario" class="tab-content">
         <h2>Tracking Smooth Intermediário</h2>
         
         <!-- Warn Grid Section -->
@@ -402,10 +557,88 @@
                 <strong>Promotion Score</strong>
                 <input type="number" value="2000" readonly>
             </div>
-            <div class="progress-bar">
-                <div class="progress" id="progress-r3d-smoothness-trainer-pro"></div>
+        </div>
+
+        <!-- Grid Container 2 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="r3d Extra Smoothsphere" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="mira-centering-180-ns-hard" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Matenha sempre a velocidade do seu glide constante, quando o bot acelerar acelere junto com ele e quando ele diminuar leia o movimento para que não perca o alvo.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="7000" readonly>
             </div>
         </div>
+
+        <!-- Grid Container 3 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="MIRA Demonsphere Smooth" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-smooth-pro-tracking" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Mantenha a mira no alvo, focando no controle e na precisão sem tensionar.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="290000" readonly>
+            </div>
+        </div>
+
+        <!-- Grid Container 4 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="MIRA DynamicSphere Control" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-advanced-multi-hs" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Siga os alvos de maneira suave sem tensionar e mantenha a mira no alvo para confirmar que ele morreu pois a vida do bot regenera.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="280000" readonly>
+            </div>
+        </div>
+
+        <!-- Grid Container 5 -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Nome do Mapa</strong>
+                <input type="text" value="r3d Precise Tracking Goated" readonly>
+            </div>
+            <div class="grid-item">
+                <strong>Highscore do Usuário</strong>
+                <input type="number" id="r3d-reaction-tracking" placeholder="Digite o highscore">
+            </div>
+            <div class="grid-item">
+                <strong>Dicas</strong>
+                <p>Foque em se manter sempre preciso, sem muita tensão nos dedos e na mão, preste atenção na mudança de padrão de cada bot.</p>
+            </div>
+            <div class="grid-item">
+                <strong>Promotion Score</strong>
+                <input type="number" value="2800" readonly>
+            </div>
+        </div>
+    </div>
 
         <!-- Share Button -->
         <button onclick="shareScore('r3d-smoothness-trainer-pro')">Compartilhar Pontuação</button>
