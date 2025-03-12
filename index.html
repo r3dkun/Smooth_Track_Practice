@@ -5,179 +5,212 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smoothness Grind - Iniciante ao Intermediário</title>
     <style>
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Estilos gerais */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(90deg, #444, #000000); /* Red to black gradient */
-    color: #e0e0e0; /* Light text */
-    line-height: 1.6;
-    padding: 20px;
-}
+        /* Estilos gerais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(90deg, #444, #000000); /* Red to black gradient */
+            color: #e0e0e0; /* Light text */
+            line-height: 1.6;
+            padding: 20px;
+        }
 
-h1, h2 {
-    color: #444;
-    margin-bottom: 20px;
-}
+        h1, h2 {
+            color: #444;
+            margin-bottom: 20px;
+        }
 
-h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-h2 {
-    font-size: 2rem;
-    margin-top: 20px;
-    background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-/* Abas */
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+        /* Abas */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
 
-.tab-button {
-    background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
-    color: #121212; /* Dark text for contrast */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-right: 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: transform 0.2s ease;
-}
+        .tab-button {
+            background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
+            color: #121212; /* Dark text for contrast */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+        }
 
-.tab-button:hover {
-    transform: translateY(-2px); /* Slight lift effect */
-}
+        .tab-button:hover {
+            transform: translateY(-2px); /* Slight lift effect */
+        }
 
-.tab-button.active {
-    background: linear-gradient(90deg, #ffffff, #ff0000); /* White to red gradient for active tab */
-    font-weight: bold;
-    color: #121212; /* Dark text for contrast */
-}
+        .tab-button.active {
+            background: linear-gradient(90deg, #ffffff, #ff0000); /* White to red gradient for active tab */
+            font-weight: bold;
+            color: #121212; /* Dark text for contrast */
+        }
 
-/* Conteúdo das abas */
-.tab-content {
-    display: none;
-    background-color: #1f1f1f; /* Dark gray for content */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-}
+        /* Conteúdo das abas */
+        .tab-content {
+            display: none;
+            background-color: #1f1f1f; /* Dark gray for content */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        }
 
-.tab-content.active {
-    display: block;
-}
+        .tab-content.active {
+            display: block;
+        }
 
-/* Seção de avisos */
-.warn-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
-}
+        /* Seção de avisos */
+        .warn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
 
-.warn-item {
-    background-color: #2a2a2a; /* Slightly lighter dark gray */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
+        .warn-item {
+            background-color: #2a2a2a; /* Slightly lighter dark gray */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
 
-.warn-item strong {
-    color: #ff0000; /* Yellow for emphasis */
-    font-size: 1.1rem;
-}
+        .warn-item strong {
+            color: #ff0000; /* Yellow for emphasis */
+            font-size: 1.1rem;
+        }
 
-.warn-item p, .warn-item ul {
-    margin-top: 10px;
-    color: #d0d0d0; /* Light gray for text */
-}
+        .warn-item p, .warn-item ul {
+            margin-top: 10px;
+            color: #d0d0d0; /* Light gray for text */
+        }
 
-.warn-item ul {
-    padding-left: 20px;
-}
+        .warn-item ul {
+            padding-left: 20px;
+        }
 
-.warn-item ul li {
-    margin-bottom: 5px;
-}
+        .warn-item ul li {
+            margin-bottom: 5px;
+        }
 
-/* Grid de mapas */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-bottom: 20px;
-}
+        /* Grid de mapas */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
 
-.grid-item {
-    background-color: #2a2a2a; /* Slightly lighter dark gray */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
+        .grid-item {
+            background-color: #2a2a2a; /* Slightly lighter dark gray */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
 
-.grid-item strong {
-    color: #ff0000; /* Yellow for emphasis */
-    font-size: 1.1rem;
-}
+        .grid-item strong {
+            color: #ff0000; /* Yellow for emphasis */
+            font-size: 1.1rem;
+        }
 
-.grid-item input[type="text"], .grid-item input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    margin-top: 10px;
-    border: 1px solid #444; /* Dark border */
-    border-radius: 5px;
-    background-color: #333; /* Dark input background */
-    color: #e0e0e0; /* Light text */
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
+        .grid-item input[type="text"], .grid-item input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #444; /* Dark border */
+            border-radius: 5px;
+            background-color: #333; /* Dark input background */
+            color: #e0e0e0; /* Light text */
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
 
-.grid-item input[type="text"]:focus, .grid-item input[type="number"]:focus {
-    border-color: #ff0000; /* Yellow border on focus */
-    outline: none;
-}
+        .grid-item input[type="text"]:focus, .grid-item input[type="number"]:focus {
+            border-color: #ff0000; /* Yellow border on focus */
+            outline: none;
+        }
 
-.grid-item input[readonly] {
-    background-color: #444; /* Darker gray for readonly inputs */
-    cursor: not-allowed;
-}
+        .grid-item input[readonly] {
+            background-color: #444; /* Darker gray for readonly inputs */
+            cursor: not-allowed;
+        }
 
-.grid-item p {
-    margin-top: 10px;
-    color: #d0d0d0; /* Light gray for text */
-}
+        .grid-item p {
+            margin-top: 10px;
+            color: #d0d0d0; /* Light gray for text */
+        }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .tabs {
-        flex-direction: column;
-    }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
 
-    .tab-button {
-        margin-bottom: 10px;
-    }
+            .tab-button {
+                margin-bottom: 10px;
+            }
 
-    .warn-grid, .grid-container {
-        grid-template-columns: 1fr;
-    }
-}
+            .warn-grid, .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Congratulatory Effect */
+        .congrats-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            color: #fff;
+            animation: congratsAnimation 2s ease-out;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        @keyframes congratsAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body>
@@ -562,11 +595,14 @@ h2 {
             event.currentTarget.classList.add("active");
         }
 
-        // Função para salvar o highscore no localStorage
-        function saveHighscore(inputId) {
+        // Função para salvar o highscore no localStorage e verificar se é igual ao promotion score
+        function saveHighscore(inputId, promotionScore) {
             const input = document.getElementById(inputId);
             input.addEventListener("input", () => {
                 localStorage.setItem(inputId, input.value);
+                if (parseInt(input.value) >= promotionScore) {
+                    showCongratsEffect();
+                }
             });
         }
 
@@ -579,30 +615,43 @@ h2 {
             }
         }
 
-        // IDs dos inputs para highscores
-        const highscoreIds = [
-            "r3d-smoothness-trainer",
-            "r3d-smooth-tracking",
-            "r3d-smooth-tracking-hs",
-            "r3d-close-smooth-strafes",
-            "mira-centering-180-ns-easy",
-            "mira-thin-gauntlet-easy",
-            "r3d-smoothsphere",
-            "r3d-slowed-smoothbot-easy",
-            "r3d-pipoca-vertical-tracking",
-            "r3d-bounce180-ti-easy",
-            "r3d-smoothness-trainer-pro",
-            "mira-centering-180-ns-hard",
-            "r3d-smooth-pro-tracking",
-            "r3d-advanced-multi-hs",
-            "r3d-reaction-tracking"
+        // Função para mostrar o efeito de congratulações
+        function showCongratsEffect() {
+            const congratsDiv = document.createElement("div");
+            congratsDiv.classList.add("congrats-effect");
+            congratsDiv.textContent = "Parabéns! 🎉";
+            document.body.appendChild(congratsDiv);
+
+            // Remove o efeito após a animação terminar
+            setTimeout(() => {
+                congratsDiv.remove();
+            }, 2000);
+        }
+
+        // IDs dos inputs para highscores e seus respectivos promotion scores
+        const highscoreData = [
+            { id: "r3d-smoothness-trainer", promotionScore: 50000 },
+            { id: "r3d-smooth-tracking", promotionScore: 19000 },
+            { id: "r3d-smooth-tracking-hs", promotionScore: 15000 },
+            { id: "r3d-close-smooth-strafes", promotionScore: 35000 },
+            { id: "mira-centering-180-ns-easy", promotionScore: 45000 },
+            { id: "mira-thin-gauntlet-easy", promotionScore: 2000 },
+            { id: "r3d-smoothsphere", promotionScore: 30000 },
+            { id: "r3d-slowed-smoothbot-easy", promotionScore: 41500 },
+            { id: "r3d-pipoca-vertical-tracking", promotionScore: 25000 },
+            { id: "r3d-bounce180-ti-easy", promotionScore: 40000 },
+            { id: "r3d-smoothness-trainer-pro", promotionScore: 2000 },
+            { id: "mira-centering-180-ns-hard", promotionScore: 7000 },
+            { id: "r3d-smooth-pro-tracking", promotionScore: 290000 },
+            { id: "r3d-advanced-multi-hs", promotionScore: 280000 },
+            { id: "r3d-reaction-tracking", promotionScore: 2800 }
         ];
 
         // Carregar highscores ao abrir a página
-        highscoreIds.forEach(id => loadHighscore(id));
+        highscoreData.forEach(data => loadHighscore(data.id));
 
-        // Salvar highscores ao digitar
-        highscoreIds.forEach(id => saveHighscore(id));
+        // Salvar highscores ao digitar e verificar se atingiu o promotion score
+        highscoreData.forEach(data => saveHighscore(data.id, data.promotionScore));
     </script>
 </body>
 </html>
