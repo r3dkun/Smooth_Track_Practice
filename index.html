@@ -675,14 +675,6 @@
             }, 2500);
         }
 
-        // Função para compartilhar pontuação
-        function shareScore(inputId) {
-            const score = document.getElementById(inputId).value;
-            const url = window.location.href;
-            const text = `Acabei de atingir ${score} pontos no r3d Smoothness Practice Benchmark! ${url}`;
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
-        }
-
         // IDs dos inputs para highscores e seus respectivos promotion scores
         const highscoreData = [
             { id: "r3d-smoothness-trainer", promotionScore: 50000 },
