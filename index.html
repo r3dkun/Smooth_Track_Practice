@@ -15,10 +15,17 @@
         /* Estilos gerais */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(90deg, #444, #000000); /* Red to black gradient */
-            color: #e0e0e0; /* Light text */
+            background: linear-gradient(135deg, #1a1a1a, #333333, #1a1a1a);
+            color: #e0e0e0;
             line-height: 1.6;
             padding: 20px;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         h1, h2 {
@@ -29,7 +36,7 @@
         h1 {
             font-size: 2.5rem;
             text-align: center;
-            background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
+            background: linear-gradient(90deg, #ff0000, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -37,9 +44,23 @@
         h2 {
             font-size: 2rem;
             margin-top: 20px;
-            background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
+            background: linear-gradient(90deg, #ff0000, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism Effect */
+        .tab-content, .grid-item, .warn-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
         }
 
         /* Abas */
@@ -50,38 +71,43 @@
         }
 
         .tab-button {
-            background: linear-gradient(90deg, #ff0000, #ffffff); /* Red to white gradient */
-            color: #121212; /* Dark text for contrast */
+            background: linear-gradient(90deg, #ff0000, #ffffff);
+            color: #121212;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             margin-right: 10px;
             border-radius: 5px;
             font-size: 1rem;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .tab-button:hover {
-            transform: translateY(-2px); /* Slight lift effect */
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
         }
 
         .tab-button.active {
-            background: linear-gradient(90deg, #ffffff, #ff0000); /* White to red gradient for active tab */
+            background: linear-gradient(90deg, #ffffff, #ff0000);
             font-weight: bold;
-            color: #121212; /* Dark text for contrast */
+            color: #121212;
         }
 
         /* Conteúdo das abas */
         .tab-content {
             display: none;
-            background-color: #1f1f1f; /* Dark gray for content */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .tab-content.active {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Seção de avisos */
@@ -93,20 +119,19 @@
         }
 
         .warn-item {
-            background-color: #2a2a2a; /* Slightly lighter dark gray */
             padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .warn-item strong {
-            color: #ff0000; /* Yellow for emphasis */
+            color: #ff0000;
             font-size: 1.1rem;
         }
 
         .warn-item p, .warn-item ul {
             margin-top: 10px;
-            color: #d0d0d0; /* Light gray for text */
+            color: #d0d0d0;
         }
 
         .warn-item ul {
@@ -126,14 +151,13 @@
         }
 
         .grid-item {
-            background-color: #2a2a2a; /* Slightly lighter dark gray */
             padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .grid-item strong {
-            color: #ff0000; /* Yellow for emphasis */
+            color: #ff0000;
             font-size: 1.1rem;
         }
 
@@ -141,27 +165,45 @@
             width: 100%;
             padding: 8px;
             margin-top: 10px;
-            border: 1px solid #444; /* Dark border */
+            border: 1px solid #444;
             border-radius: 5px;
-            background-color: #333; /* Dark input background */
-            color: #e0e0e0; /* Light text */
+            background-color: #333;
+            color: #e0e0e0;
             font-size: 1rem;
             transition: border-color 0.3s ease;
         }
 
         .grid-item input[type="text"]:focus, .grid-item input[type="number"]:focus {
-            border-color: #ff0000; /* Yellow border on focus */
+            border-color: #ff0000;
             outline: none;
         }
 
         .grid-item input[readonly] {
-            background-color: #444; /* Darker gray for readonly inputs */
+            background-color: #444;
             cursor: not-allowed;
         }
 
         .grid-item p {
             margin-top: 10px;
-            color: #d0d0d0; /* Light gray for text */
+            color: #d0d0d0;
+        }
+
+        /* Progress Tracker */
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #444;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #ff0000;
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.3s ease;
         }
 
         /* Responsividade */
@@ -179,7 +221,7 @@
             }
         }
 
-/* Congratulatory Effect */
+        /* Congratulatory Effect */
         .congrats-effect {
             position: fixed;
             top: 0;
@@ -190,34 +232,34 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 4rem;
+            font-size: 3rem;
             color: #fff;
-            animation: congratsAnimation 1.5s ease-in-out;
+            animation: congratsAnimation 2.5s ease-in-out;
             z-index: 1000;
             pointer-events: none;
-            opacity: 0; /* Start with 0 opacity */
+            opacity: 0;
         }
 
         @keyframes congratsAnimation {
             0% {
                 opacity: 0;
-                transform: scale(0.9); /* Start slightly smaller */
+                transform: scale(0.9);
             }
             20% {
                 opacity: 1;
-                transform: scale(1.1); /* Slight overshoot for smoothness */
+                transform: scale(1.1);
             }
             40% {
                 opacity: 1;
-                transform: scale(1); /* Return to normal size */
+                transform: scale(1);
             }
             80% {
                 opacity: 1;
-                transform: scale(1); /* Stay visible for a bit */
+                transform: scale(1);
             }
             100% {
                 opacity: 0;
-                transform: scale(0.9); /* Fade out smoothly */
+                transform: scale(0.9);
             }
         }
     </style>
@@ -226,9 +268,9 @@
     <h1>r3d Smoothness Practice Benchmark</h1>
 
     <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'iniciante')">Tracking Smooth Iniciante</button>
-        <button class="tab-button" onclick="openTab(event, 'amador')">Tracking Smooth Amador</button>
-        <button class="tab-button" onclick="openTab(event, 'intermediario')">Tracking Smooth Intermediário</button>
+        <button class="tab-button active" aria-label="Aba Iniciante" onclick="openTab(event, 'iniciante')">Tracking Smooth Iniciante</button>
+        <button class="tab-button" aria-label="Aba Amador" onclick="openTab(event, 'amador')">Tracking Smooth Amador</button>
+        <button class="tab-button" aria-label="Aba Intermediário" onclick="openTab(event, 'intermediario')">Tracking Smooth Intermediário</button>
     </div>
 
     <div id="iniciante" class="tab-content active">
@@ -268,87 +310,13 @@
                 <strong>Promotion Score</strong>
                 <input type="number" value="50000" readonly>
             </div>
-        </div>
-
-        <!-- Grid Container 2 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="r3d Smooth Tracking" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-smooth-tracking" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Mantenha sua precisão acima de 75% e siga o bot até o final na parede, só mude a direção da mira quando o bot virar.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="19000" readonly>
+            <div class="progress-bar">
+                <div class="progress" id="progress-r3d-smoothness-trainer"></div>
             </div>
         </div>
 
-        <!-- Grid Container 3 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="r3d Smooth Tracking HS" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-smooth-tracking-hs" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>A mesma coisa que o Smooth Tracking anterior porém mais preciso e mirando apenas na cabeça.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="17500" readonly>
-            </div>
-        </div>
-
-        <!-- Grid Container 4 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="r3d Close Smooth Strafes" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-close-smooth-strafes" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Não tente prever o movimento do BOT, siga ele até o final do strafe dele e apenas mude a direção da mira quando o bot mudar a direção do strafe.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="35000" readonly>
-            </div>
-        </div>
-
-        <!-- Grid Container 5 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="MIRA Centering 180 NS Easy" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="mira-centering-180-ns-easy" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Siga o bot usando o braço inteiro para mirar, ele só muda o strafe quando bate na parede, siga até o fim dela, preste atenção na mudança de aceleração do bot para pontuar mais.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="45000" readonly>
-            </div>
-        </div>
+        <!-- Share Button -->
+        <button onclick="shareScore('r3d-smoothness-trainer')">Compartilhar Pontuação</button>
     </div>
 
     <div id="amador" class="tab-content">
@@ -388,87 +356,13 @@
                 <strong>Promotion Score</strong>
                 <input type="number" value="3000" readonly>
             </div>
-        </div>
-
-        <!-- Grid Container 2 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="r3d Smoothsphere" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-smoothsphere" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Matenha sempre a velocidade do seu glide constante, quando o bot acelerar acelere junto com ele e quando ele diminuar leia o movimento para que não perca o alvo.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="30000" readonly>
+            <div class="progress-bar">
+                <div class="progress" id="progress-mira-thin-gauntlet-easy"></div>
             </div>
         </div>
 
-        <!-- Grid Container 3 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="r3d Slowed Smoothbot Easy" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-slowed-smoothbot-easy" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Matenha sempre a velocidade do seu glide constante, quando o bot acelerar acelere junto com ele e quando ele diminuar leia o movimento para que não perca o alvo.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="41500" readonly>
-            </div>
-        </div>
-
-        <!-- Grid Container 4 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="r3d Pipoca Vertical Tracking" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-pipoca-vertical-tracking" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Siga o bot até o ápice da sua altura e depois siga-o até o final da sua queda</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="25000" readonly>
-            </div>
-        </div>
-
-        <!-- Grid Container 5 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="r3d Bounce180 TI Easy" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-bounce180-ti-easy" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Aqui você vai focar em fazer o movimento do bot com o seu mouse de forma suave, sem tensão, sem desespero, o alvo é grande, apenas siga-o.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="40000" readonly>
-            </div>
-        </div>
+        <!-- Share Button -->
+        <button onclick="shareScore('mira-thin-gauntlet-easy')">Compartilhar Pontuação</button>
     </div>
 
     <div id="intermediario" class="tab-content">
@@ -508,87 +402,13 @@
                 <strong>Promotion Score</strong>
                 <input type="number" value="2000" readonly>
             </div>
-        </div>
-
-        <!-- Grid Container 2 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="r3d Extra Smoothsphere" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="mira-centering-180-ns-hard" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Matenha sempre a velocidade do seu glide constante, quando o bot acelerar acelere junto com ele e quando ele diminuar leia o movimento para que não perca o alvo.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="7000" readonly>
+            <div class="progress-bar">
+                <div class="progress" id="progress-r3d-smoothness-trainer-pro"></div>
             </div>
         </div>
 
-        <!-- Grid Container 3 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="MIRA Demonsphere Smooth" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-smooth-pro-tracking" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Mantenha a mira no alvo, focando no controle e na precisão sem tensionar.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="290000" readonly>
-            </div>
-        </div>
-
-        <!-- Grid Container 4 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="MIRA DynamicSphere Control" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-advanced-multi-hs" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Siga os alvos de maneira suave sem tensionar e mantenha a mira no alvo para confirmar que ele morreu pois a vida do bot regenera.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="280000" readonly>
-            </div>
-        </div>
-
-        <!-- Grid Container 5 -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <strong>Nome do Mapa</strong>
-                <input type="text" value="r3d Precise Tracking Goated" readonly>
-            </div>
-            <div class="grid-item">
-                <strong>Highscore do Usuário</strong>
-                <input type="number" id="r3d-reaction-tracking" placeholder="Digite o highscore">
-            </div>
-            <div class="grid-item">
-                <strong>Dicas</strong>
-                <p>Foque em se manter sempre preciso, sem muita tensão nos dedos e na mão, preste atenção na mudança de padrão de cada bot.</p>
-            </div>
-            <div class="grid-item">
-                <strong>Promotion Score</strong>
-                <input type="number" value="2800" readonly>
-            </div>
-        </div>
+        <!-- Share Button -->
+        <button onclick="shareScore('r3d-smoothness-trainer-pro')">Compartilhar Pontuação</button>
     </div>
 
     <script>
@@ -604,24 +424,20 @@
             event.currentTarget.classList.add("active");
         }
 
-        // Função para salvar o highscore no localStorage e verificar se é igual ao promotion score
+        // Função para salvar o highscore e atualizar a barra de progresso
         function saveHighscore(inputId, promotionScore) {
             const input = document.getElementById(inputId);
+            const progressBar = document.getElementById(`progress-${inputId}`);
+
             input.addEventListener("input", () => {
                 localStorage.setItem(inputId, input.value);
+                const progress = (input.value / promotionScore) * 100;
+                progressBar.style.width = `${progress}%`;
+
                 if (parseInt(input.value) >= promotionScore) {
                     showCongratsEffect();
                 }
             });
-        }
-
-        // Função para carregar o highscore do localStorage
-        function loadHighscore(inputId) {
-            const input = document.getElementById(inputId);
-            const savedValue = localStorage.getItem(inputId);
-            if (savedValue) {
-                input.value = savedValue;
-            }
         }
 
         // Função para mostrar o efeito de congratulações
@@ -631,20 +447,27 @@
             congratsDiv.textContent = "Parabéns! 🎉";
             document.body.appendChild(congratsDiv);
 
-            // Remove o efeito após a animação terminar
             setTimeout(() => {
                 congratsDiv.remove();
-            }, 2000);
+            }, 2500);
+        }
+
+        // Função para compartilhar pontuação
+        function shareScore(inputId) {
+            const score = document.getElementById(inputId).value;
+            const url = window.location.href;
+            const text = `Acabei de atingir ${score} pontos no r3d Smoothness Practice Benchmark! ${url}`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
         }
 
         // IDs dos inputs para highscores e seus respectivos promotion scores
         const highscoreData = [
             { id: "r3d-smoothness-trainer", promotionScore: 50000 },
             { id: "r3d-smooth-tracking", promotionScore: 19000 },
-            { id: "r3d-smooth-tracking-hs", promotionScore: 15000 },
+            { id: "r3d-smooth-tracking-hs", promotionScore: 17500 },
             { id: "r3d-close-smooth-strafes", promotionScore: 35000 },
             { id: "mira-centering-180-ns-easy", promotionScore: 45000 },
-            { id: "mira-thin-gauntlet-easy", promotionScore: 2000 },
+            { id: "mira-thin-gauntlet-easy", promotionScore: 3000 },
             { id: "r3d-smoothsphere", promotionScore: 30000 },
             { id: "r3d-slowed-smoothbot-easy", promotionScore: 41500 },
             { id: "r3d-pipoca-vertical-tracking", promotionScore: 25000 },
@@ -657,10 +480,18 @@
         ];
 
         // Carregar highscores ao abrir a página
-        highscoreData.forEach(data => loadHighscore(data.id));
+        highscoreData.forEach(data => {
+            loadHighscore(data.id);
+            saveHighscore(data.id, data.promotionScore);
+        });
 
-        // Salvar highscores ao digitar e verificar se atingiu o promotion score
-        highscoreData.forEach(data => saveHighscore(data.id, data.promotionScore));
+        function loadHighscore(inputId) {
+            const input = document.getElementById(inputId);
+            const savedValue = localStorage.getItem(inputId);
+            if (savedValue) {
+                input.value = savedValue;
+            }
+        }
     </script>
 </body>
 </html>
